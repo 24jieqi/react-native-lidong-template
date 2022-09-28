@@ -1,5 +1,5 @@
-import { ScrollView, Text, Platform } from 'react-native'
 import { cloneElement } from 'react'
+import { ScrollView, Text, Platform } from 'react-native'
 
 // @ts-ignore
 ScrollView.defaultProps = {
@@ -26,8 +26,10 @@ const defaultFontFamily = {
   }),
 }
 
+// @ts-ignore
 const oldRender = Text.render
 
+// @ts-ignore
 Text.render = function (...args) {
   const origin = oldRender.call(this, ...args)
   return cloneElement(origin, {

@@ -34,6 +34,7 @@ const hostGlobalStore = create(
       ? (persist<HostState>(baseStateCreator, {
           name,
           getStorage: () => AsyncStorage,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
         }) as any)
       : baseStateCreator,
   ),

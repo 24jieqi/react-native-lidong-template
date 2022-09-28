@@ -48,8 +48,8 @@ const App = () => {
           </XiaoshuProvider>
         </ErrorBoundary>
       </SafeAreaProvider>
-    </ApolloProvider> 
-  );
-};
+    </ApolloProvider>
+  )
+}
 
-export default App;
+export default App

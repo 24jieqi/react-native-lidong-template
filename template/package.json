@@ -29,8 +29,8 @@
     "build:ios": "cd ios && fastlane prod",
     "build:ios:test": "cd ios && fastlane test",
     "build:ios:demo": "cd ios && fastlane demo",
-    "gen": "fruits-chain-gc http://192.168.10.186:9406/graphql",
-    "gen:w": "fruits-chain-gc http://192.168.10.186:9406/graphql -w",
+    "gen": "fruits-chain-gc http://192.168.10.233:9406/graphql",
+    "gen:w": "fruits-chain-gc http://192.168.10.233:9406/graphql -w",
     "mock": "yarn gk start",
     "bootsplash:gen": "react-native generate-bootsplash assets/bootsplash_logo_original.png --background-color=FFFFFF --logo-width=100 --assets-path=assets --flavor=main"
   },

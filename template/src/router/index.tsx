@@ -7,7 +7,7 @@ import { setErrorRouterInfo } from '@/components/error-boundary'
 
 import { defaultStackRouteOptions } from './config'
 import { navigationRef } from './root-navigation'
-import { RootStackParamList } from './typing'
+import type { RootStackParamList } from './typing'
 
 export type { RootStackScreenProps, RootStackParamList } from './typing'
 
@@ -25,22 +25,22 @@ const Router: React.FC = () => {
 
   return (
     <NavigationContainer ref={navigationRef} onStateChange={onStateChange}>
-        <Stack.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="HOME"
+          component={undefined}
+          options={{ headerShown: false }}
+        />
+        {[].map(route => (
           <Stack.Screen
-            name="HOME"
-            component={undefined}
-            options={{ headerShown: false }}
+            key={route.name}
+            name={route.name}
+            component={route.component}
+            options={{ ...defaultStackRouteOptions, ...route.options }}
           />
-          {[].map(route => (
-            <Stack.Screen
-              key={route.name}
-              name={route.name}
-              component={route.component}
-              options={{ ...defaultStackRouteOptions, ...route.options }}
-            />
-          ))}
-        </Stack.Navigator>
-      </NavigationContainer>
+        ))}
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
 

@@ -28,6 +28,8 @@ export interface AppVersion {
 
 export const getAppVersion = () => {
   return request<ResponseData<AppVersion>>({
-    url: buildURL(`/api/app/version/${DeviceMap[Platform.OS] ?? 0}/${config.appId}`),
+    url: buildURL(
+      `/api/app/version/${DeviceMap[Platform.OS] ?? 0}/${config.appId}`,
+    ),
   })
 }

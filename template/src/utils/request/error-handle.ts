@@ -1,9 +1,8 @@
+import { Toast } from '@fruits-chain/react-native-xiaoshu'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import config from '@/config'
 import * as RootNavigation from '@/router/root-navigation'
-import { LOGIN_PATH } from '@/router/stack/login'
-import Toast from '@/utils/toast'
 
 import WhiteList from './allow-list'
 import MSG_LIST from './message'
@@ -11,8 +10,8 @@ import MSG_LIST from './message'
 const { authKey } = config
 
 const ToastError = (msg: string) => {
-  Toast.info({
-    content: msg,
+  Toast({
+    message: msg,
     duration: 1500,
   })
 }
@@ -74,7 +73,7 @@ function handleUnAuthError(url: string, errorMessage = MSG_LIST.loginout) {
 
   if (!WhiteList.includes(path)) {
     AsyncStorage.removeItem(authKey)
-    RootNavigation.navigate(LOGIN_PATH)
+    RootNavigation.navigate('LOGIN')
   }
 }
 

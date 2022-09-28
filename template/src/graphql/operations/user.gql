@@ -1,5 +1,5 @@
 # 用户信息/权限数据
-query userInfo @mock(enable: false) {
+query userInfo {
   loginUserInfo {
     userId
     userName

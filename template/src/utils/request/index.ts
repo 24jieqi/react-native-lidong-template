@@ -1,10 +1,10 @@
+import { Toast } from '@fruits-chain/react-native-xiaoshu'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import type { AxiosRequestConfig, AxiosResponse } from 'axios'
 import axios from 'axios'
 
 import systemConfig from '@/config'
 import useHostStore from '@/stores/host'
-import Toast from '@/utils/toast'
 
 import { handleNoCommonError, handleUnAuthError } from './error-handle'
 import MSG_LIST from './message'
@@ -32,8 +32,8 @@ axios.interceptors.response.use(
     // 错误并提示
     if (result.errCode !== 200) {
       const errText = `${result.errMsg}`
-      Toast.info({
-        content: errText,
+      Toast({
+        message: errText,
         duration: 2500,
       })
       return Promise.reject(errText)
