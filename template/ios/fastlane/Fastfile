@@ -1,0 +1,68 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  skip_docs
+  # before_all do |lane|
+  #   cocoapods
+  # end
+  desc "测试版本 打包上传蒲公英"
+  lane :test do
+    match(
+      type: "adhoc",
+    )
+    build_ios_app(
+      scheme: "BuildTest",
+      clean: true,
+    )
+  
+    pgyer(api_key: "36ee0aff55969af0a391ff9e97d406b4", user_key: "93a1845a5b9cfc345336075bbc9b7e9e")
+  end
+
+  desc "DEMO版本 打包上传蒲公英"
+  lane :demo do
+    match(
+      type: "adhoc",
+    )
+    build_ios_app(
+      scheme: "BuildDemo",
+      clean: true,
+    )
+  
+    pgyer(api_key: "36ee0aff55969af0a391ff9e97d406b4", user_key: "93a1845a5b9cfc345336075bbc9b7e9e")
+  end
+
+  desc "正式版本 打包上传蒲公英"
+  lane :prod do
+    increment_build_number
+    match(
+      type: "appstore",
+      readonly: is_ci
+    )
+    build_ios_app(
+      scheme: "BuildProduction",
+      clean: true,
+    )
+    upload_to_app_store(
+      force: true,
+      skip_metadata: true,
+      skip_screenshots: true,
+    )
+    pgyer(api_key: "36ee0aff55969af0a391ff9e97d406b4", user_key: "93a1845a5b9cfc345336075bbc9b7e9e")
+  end
+
+end

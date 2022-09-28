@@ -1,0 +1,9 @@
+{
+  "name": "react-native-lidong-template",
+  "version": "0.1.0",
+  "description": "「立冬」react native 模板",
+  "main": "index.js",
+  "repository": "https://github.com/hjfruit/react-native-lidong-template.git",
+  "author": "LING_ZI_QING <onlylingstudio@gmail.com>",
+  "license": "MIT"
+}

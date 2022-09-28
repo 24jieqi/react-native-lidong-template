@@ -1,0 +1,20 @@
+# 用户信息/权限数据
+query userInfo @mock(enable: false) {
+  loginUserInfo {
+    userId
+    userName
+    userPhoneNum
+    landlineNum
+    createTime
+    organizationName
+    positions {
+      positionId
+      positionName
+    }
+    stores {
+      userId
+      storehouseId
+      storehouseName
+    }
+  }
+}

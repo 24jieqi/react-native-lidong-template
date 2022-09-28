@@ -1,0 +1,24 @@
+{
+  "extends": "./tsconfig.react-native.json",     /* Recommended React Native TSConfig base */
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+
+    /* Completeness */
+    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */,
+    "baseUrl": "src" /* Base directory to resolve non-absolute module names. */,
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "allowUmdGlobalAccess": true,
+  },
+  "include": ["./src"],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "./src/graphql/generated"
+  ]
+}

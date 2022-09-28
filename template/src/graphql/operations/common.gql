@@ -1,0 +1,4 @@
+## App 上报错误
+mutation insertAppException($appExceptionDTO: AppExceptionInput) {
+  insertAppException(appExceptionDTO: $appExceptionDTO)
+}

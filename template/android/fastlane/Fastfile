@@ -1,0 +1,72 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  skip_docs
+  
+  desc "测试版本 打包上传蒲公英"
+  lane :test do
+    gradle(task:'clean')
+    gradle(
+      task: 'assemble',
+      build_type: 'Release',
+      flavor: 'Qa',
+      system_properties: {
+        "ENVFILE": ".env.test"
+      },
+    )
+    pgyer(api_key: "36ee0aff55969af0a391ff9e97d406b4", user_key: "93a1845a5b9cfc345336075bbc9b7e9e")
+  end
+
+  desc "DEMO版本 打包上传蒲公英"
+  lane :demo do
+    gradle(task:'clean')
+    gradle(
+      task: 'assemble',
+      build_type: 'Release',
+      flavor: 'Demo',
+      system_properties: {
+        "ENVFILE": ".env.demo"
+      },
+    )
+    pgyer(api_key: "36ee0aff55969af0a391ff9e97d406b4", user_key: "93a1845a5b9cfc345336075bbc9b7e9e")
+  end
+
+  desc "正式版本 打包上传蒲公英"
+  lane :prod do
+    gradle(task:'clean')
+    gradle(
+      task: 'assemble',
+      build_type: 'Release',
+      flavor: 'Production',
+      system_properties: {
+        "ENVFILE": ".env.production"
+      },
+    )
+    pgyer(api_key: "36ee0aff55969af0a391ff9e97d406b4", user_key: "93a1845a5b9cfc345336075bbc9b7e9e")
+  end
+
+  after_all do |lane|
+    fastlane_directory = Dir.pwd
+    apk_file_path = lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+    apk_path = fastlane_directory + "/outputs/pitaya-app.apk"
+    sh("mkdir", "-p", fastlane_directory +"/outputs")
+    sh("cp", "-p", "-f", apk_file_path, apk_path)
+
+    puts("apk保存路径： " + apk_path)
+  end
+end
