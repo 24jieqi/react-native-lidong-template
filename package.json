@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/hjfruit/react-native-lidong-template.git",
   "author": "LING_ZI_QING <onlylingstudio@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "commit": "npx git-cz"
+  }
 }
