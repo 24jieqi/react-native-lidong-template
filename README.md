@@ -2,6 +2,11 @@
 
 > 「立冬」React Native 初始化项目模板
 
+[lidong-npm-url]: https://www.npmjs.com/package/@fruits-chain/react-native-lidong-template
+
+[![](https://img.shields.io/npm/v/@fruits-chain/react-native-lidong-template.svg)][lidong-npm-url]
+[![](https://img.shields.io/npm/dm/@fruits-chain/react-native-lidong-template.svg)][lidong-npm-url]
+
 ## ⭐ 特点
 
 - 可以使用 [React Native CLI](https://github.com/react-native-community/cli) 直接创建
