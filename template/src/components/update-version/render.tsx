@@ -1,3 +1,4 @@
+import { Overlay } from '@fruits-chain/react-native-xiaoshu'
 import React, { useEffect, useState, useCallback, memo } from 'react'
 import {
   View,
@@ -5,13 +6,11 @@ import {
   Image,
   TouchableOpacity,
   Platform,
-  NativeModules,
-  DeviceEventEmitter,
   StyleSheet,
   ActivityIndicator,
 } from 'react-native'
-import Modal from 'react-native-modal'
 import VersionNumber from 'react-native-version-number'
+import UpdateVersion from 'rn-update-version'
 
 import type { AppVersion } from '@/middle-services/api-restful'
 
@@ -54,8 +53,6 @@ interface IProps {
   appleId?: string | number
 }
 
-const { RNUpdateVersionModule } = NativeModules
-
 /** 版本号 */
 const currentVersion = VersionNumber.buildVersion
 
@@ -76,14 +73,16 @@ const UpdateVersionRenderer: React.FC<IProps> = ({ version, appleId }) => {
     if (promote !== 2) {
       hideModal()
     }
+
+    return true
   }, [hideModal, promote])
 
   const update = useCallback(() => {
     if (iOS) {
-      RNUpdateVersionModule.update(`${appleId}`)
+      UpdateVersion.update({ appleId: `${appleId}` })
     } else {
       setLoading(true)
-      RNUpdateVersionModule.update(version.downloadUrl)
+      UpdateVersion.update({ url: version.downloadUrl })
     }
   }, [appleId, iOS, version.downloadUrl])
 
@@ -98,37 +97,25 @@ const UpdateVersionRenderer: React.FC<IProps> = ({ version, appleId }) => {
   }, [promote, version])
 
   useEffect(() => {
-    // 监听下载进度
-    const downloadEvent = DeviceEventEmitter.addListener(
-      'DownloadApkProgress',
-      arg => {
-        const { percent, error, done } = arg
-        if (error) {
-          setLoading(false)
-          setTitle('下载失败')
-          setBtnText('重新下载')
-          return
-        }
-        if (done) {
-          setLoading(false)
-          setTitle('升级成功')
-          setBtnText('重新升级')
-          return
-        }
+    const remove = UpdateVersion.listen(
+      payload => {
         setTitle('升级中...')
-        setBtnText(`${percent}%...`)
+        setBtnText(`${payload.percent}%...`)
+      },
+      info => {
+        setLoading(false)
+        setTitle('下载失败')
+        setBtnText('重新下载')
       },
     )
-    return () => {
-      downloadEvent.remove()
-    }
+    return remove
   }, [])
 
   return (
-    <Modal
-      isVisible={visible}
-      backdropOpacity={0.5}
-      onBackdropPress={onBackdropPress}>
+    <Overlay
+      visible={visible}
+      style={styles.overlay}
+      onRequestClose={onBackdropPress}>
       <View style={styles.container}>
         <Image source={Imgs.bg} style={styles.bg} />
 
@@ -172,16 +159,18 @@ const UpdateVersionRenderer: React.FC<IProps> = ({ version, appleId }) => {
           </TouchableOpacity>
         ) : null}
       </View>
-    </Modal>
+    </Overlay>
   )
 }
 
 export default memo(UpdateVersionRenderer)
 
 const styles = StyleSheet.create({
+  overlay: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   container: {
-    position: 'relative',
-    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -233,18 +222,6 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     marginBottom: 10,
   },
-  // inner: {
-  //   marginVertical: 15,
-  //   maxHeight: 80,
-  //   width: '100%',
-  // },
-  // txt: {
-  //   marginBottom: 3,
-  //   color: '#666',
-  //   fontSize: 15,
-  //   lineHeight: 24,
-  //   textAlign: 'center',
-  // },
   btn: {
     width: '100%',
     height: 40,
@@ -260,8 +237,8 @@ const styles = StyleSheet.create({
   },
   close: {
     position: 'absolute',
-    top: -10,
-    right: 40,
+    top: 4,
+    right: 4,
   },
   closeIcon: {
     width: 26,

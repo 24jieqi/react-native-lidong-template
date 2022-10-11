@@ -1,49 +1,37 @@
 import 'react-native-gesture-handler'
+import '@/assets/custom-components-config'
+import '@/assets/custom-theme'
 import { ApolloProvider } from '@apollo/client'
-import DesignTokensBailuVar from '@fruits-chain/design-tokens-bailu/lib/e-stylesheet.js'
 import { Provider as XiaoshuProvider } from '@fruits-chain/react-native-xiaoshu'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { LogBox } from 'react-native'
+import * as RNBootSplash from 'react-native-bootsplash'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 LogBox.ignoreAllLogs(true)
 
+import { customTheme } from '@/assets/custom-theme-var'
 import {
   ErrorBoundary,
   initExceptionHandler,
 } from '@/components/error-boundary'
 import UpdateVersion from '@/components/update-version'
 import apolloClient from '@/graphql/client'
-import EStyleSheet from '@/lib/react-native-extended-stylesheet'
 import Router from '@/router'
-import '@/assets/custom-components-config'
-
-// 自定义主题
-const customTheme = {
-  dropdown_text_icon_size: 12,
-}
-
-const customThemeVar = Object.keys(customTheme).reduce<
-  Record<string, string | number>
->((pre, cur) => {
-  pre[`$${cur}`] = customTheme[cur]
-  return pre
-}, {})
-
-EStyleSheet.build({
-  ...DesignTokensBailuVar,
-  ...customThemeVar,
-})
 
 initExceptionHandler()
 
 const App = () => {
+  useEffect(() => {
+    RNBootSplash.hide({ fade: true })
+  }, [])
+
   return (
     <ApolloProvider client={apolloClient}>
       <SafeAreaProvider>
         <ErrorBoundary>
-          <UpdateVersion />
           <XiaoshuProvider theme={customTheme}>
+            <UpdateVersion />
             <Router />
           </XiaoshuProvider>
         </ErrorBoundary>

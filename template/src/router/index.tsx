@@ -5,6 +5,7 @@ import React, { useCallback } from 'react'
 
 import { setErrorRouterInfo } from '@/components/error-boundary'
 
+import BottomTab from './bottom-tab'
 import { defaultStackRouteOptions } from './config'
 import { navigationRef } from './root-navigation'
 import type { RootStackParamList } from './typing'
@@ -28,7 +29,7 @@ const Router: React.FC = () => {
       <Stack.Navigator>
         <Stack.Screen
           name="HOME"
-          component={undefined}
+          component={BottomTab}
           options={{ headerShown: false }}
         />
         {[].map(route => (

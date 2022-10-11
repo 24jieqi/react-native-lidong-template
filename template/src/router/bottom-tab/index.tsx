@@ -5,7 +5,7 @@ import Home from '@/pages/home'
 import User from '@/pages/user'
 
 export type BottomTabParamList = {
-  HOME: undefined
+  HOME_HOME: undefined
   MINE: undefined
 }
 
@@ -15,7 +15,7 @@ const BottomTab: React.FC = () => {
   return (
     <Tabs.Navigator>
       <Tabs.Screen
-        name="HOME"
+        name="HOME_HOME"
         component={Home}
         options={{ title: '工作台', headerShown: false }}
       />
