@@ -6,7 +6,10 @@
   "author": "LING_ZI_QING <onlylingstudio@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "release:major": "npx release-it major",
+    "release:minor": "npx release-it minor",
+    "release:patch": "npx release-it patch"
   },
   "files": [
     "template",
@@ -15,5 +18,17 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": false
+    }
   }
 }
