@@ -18,35 +18,6 @@ import Imgs from './images'
 
 interface IProps {
   version: AppVersion
-
-  // /**
-  //  * 最新的内部版本号
-  //  * @description 主要对比这个版本提示更新，打包的版本
-  //  */
-  // version?: string | number
-
-  // /**
-  //  * 最新的外部版本号
-  //  * @description 产品版本，目前 UI 上暂时未体现
-  //  */
-  // versionCode?: string
-
-  // /**
-  //  * 升级内容信息 '1、支持第三方平台业务|2、展示第三方平台订单取单编码'
-  //  * @deprecated 目前 UI 上暂时未体现
-  //  */
-  // updateInfo?: string
-
-  // /**
-  //  * 更新方式(1升级，0不升级，2强制升级)
-  //  */
-  // promote?: number
-
-  // /**
-  //  * 安卓下载地址
-  //  */
-  // downloadUrl?: string
-
   /**
    * 必填 appleId
    */

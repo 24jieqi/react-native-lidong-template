@@ -47,19 +47,6 @@ const UpdateVersion: React.FC = () => {
   }, [])
 
   return <UpdateVersionRenderer version={version} appleId={appleId} />
-
-  // const version = data?.getVersion
-
-  // return (
-  //   <UpdateVersionRenderer
-  //     appleId={appleId}
-  //     version={version?.version}
-  //     versionCode={version?.versionCode}
-  //     promote={version?.upgradeStrategy}
-  //     downloadUrl={version?.downloadUrl}
-  //     updateInfo={version?.updateInfo}
-  //   />
-  // )
 }
 
 export default UpdateVersion
