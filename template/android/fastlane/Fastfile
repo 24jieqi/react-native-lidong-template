@@ -29,7 +29,7 @@ platform :android do
         "ENVFILE": ".env.test"
       },
     )
-    pgyer(api_key: "36ee0aff55969af0a391ff9e97d406b4", user_key: "93a1845a5b9cfc345336075bbc9b7e9e")
+    pgyer(api_key: "", user_key: "")
   end
 
   desc "DEMO版本 打包上传蒲公英"
@@ -43,7 +43,7 @@ platform :android do
         "ENVFILE": ".env.demo"
       },
     )
-    pgyer(api_key: "36ee0aff55969af0a391ff9e97d406b4", user_key: "93a1845a5b9cfc345336075bbc9b7e9e")
+    pgyer(api_key: "", user_key: "")
   end
 
   desc "正式版本 打包上传蒲公英"
@@ -57,7 +57,7 @@ platform :android do
         "ENVFILE": ".env.production"
       },
     )
-    pgyer(api_key: "36ee0aff55969af0a391ff9e97d406b4", user_key: "93a1845a5b9cfc345336075bbc9b7e9e")
+    pgyer(api_key: "", user_key: "")
   end
 
   after_all do |lane|
