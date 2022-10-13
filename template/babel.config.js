@@ -1,14 +1,15 @@
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
   plugins: [
-    [
-      'import',
-      {
-        libraryName: '@fruits-chain/react-native-xiaoshu',
-        libraryDirectory: 'src',
-      },
-      '@fruits-chain/react-native-xiaoshu',
-    ],
+    // 暂时不推荐按需加载小暑
+    // [
+    //   'import',
+    //   {
+    //     libraryName: '@fruits-chain/react-native-xiaoshu',
+    //     libraryDirectory: 'src',
+    //   },
+    //   '@fruits-chain/react-native-xiaoshu',
+    // ],
     [
       'import',
       {
