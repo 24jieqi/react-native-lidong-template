@@ -1,36 +1,17 @@
-module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
-  plugins: [
-    [
-      'import',
-      {
-        libraryName: '@fruits-chain/react-native-xiaoshu',
-        libraryDirectory: 'src',
+/**
+ * Metro configuration for React Native
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ */
+
+ module.exports = {
+  transformer: {
+    getTransformOptions: async () => ({
+      transform: {
+        experimentalImportSupport: false,
+        inlineRequires: true,
       },
-      '@fruits-chain/react-native-xiaoshu',
-    ],
-    [
-      'import',
-      {
-        libraryName: 'lodash',
-        libraryDirectory: '',
-        camel2DashComponentName: false,
-      },
-      'lodash',
-    ],
-    [
-      'module-resolver',
-      {
-        root: ['./src'],
-        alias: {
-          '@': './src',
-        },
-      },
-    ],
-  ],
-  env: {
-    production: {
-      plugins: ['transform-remove-console'],
-    },
+    }),
   },
 }
