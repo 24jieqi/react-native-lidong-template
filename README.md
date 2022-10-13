@@ -58,6 +58,10 @@ console.log(RNConfig.HOST)
 
 ### 打包
 
+修改 `package.json` 的 `version`、`versionCode`，运行 `./version-ios.sh` 脚本。
+
+`Android` 构建的时候会读取 `package.json`，`iOS` 需要手动修改 `Info.plist` 文件配置。
+
 #### Android
 
 构建正式安装包参考 `package.json` 中 `android:**` 相关命令，同时为了在一个机器上共存多个环境的应用，又采用了多渠道打包。
