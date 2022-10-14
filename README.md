@@ -19,6 +19,9 @@
 
 ```bash
 npx react-native init MyApp --template @fruits-chain/react-native-lidong-template
+
+## 创建项目后手动 yarn 一下，创建 husky 的 hook
+cd MyApp && yarn
 ```
 
 ### 更新应用名称
