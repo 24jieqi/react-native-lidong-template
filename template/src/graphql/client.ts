@@ -7,7 +7,7 @@ import {
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { onError } from '@apollo/client/link/error'
-import { removeMockDirectivesFromDocument } from '@fruits-chain/graphql-kit-helpers'
+import { removeMockDirectivesFromDocument } from '@fruits-chain/qiufen-helpers'
 import { Dialog, Toast } from '@fruits-chain/react-native-xiaoshu'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { parse } from 'graphql'
@@ -21,7 +21,7 @@ import { navigate } from '@/router/root-navigation'
 import useHostStore from '@/stores/host'
 import { omitDeepLodash } from '@/utils/deep-omit'
 
-import { port } from '../../graphql-kit.config'
+import { port } from '../../qiufen.config'
 
 const platform = Platform.OS
 
