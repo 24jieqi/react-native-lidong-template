@@ -98,3 +98,7 @@ console.log(RNConfig.HOST)
 具体实现在 `src/components/update-version` 文件夹内，需要自己实现查询接口，模板代码仅做参考。
 
 该实现只是在启动应用的时候才做检测，为了实现运行中也提示升级，业务接口也要对比、拦截提示，模板代码中 `src/graphql/client.ts` 关键词 `需要更新应用` 可以作为参考。
+
+## 🤝 其他
+
+如果遇见 Android 底部虚拟按键有问题看不见，可以看看 [Android Theme.AppCompat 中，你应该熟悉的颜色属性](https://juejin.cn/post/6844903475000639501)，修改 `android/app/src/main/res/values/styles.xml` 内 `android:navigationBarColor`，或直接注释。同理，导航栏状态有问题修改 `android:statusBarColor`。
