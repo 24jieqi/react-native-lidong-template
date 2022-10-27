@@ -1,5 +1,5 @@
 apply plugin: "com.android.application"
-apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle" // react-native-config
 
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
@@ -155,7 +155,7 @@ android {
         versionCode appVersionCode
         versionName appVersion
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
-        resValue "string", "build_config_package", "com.projectname"
+        resValue "string", "build_config_package", "com.projectname" // react-native-config
 
         if (isNewArchitectureEnabled()) {
             // We configure the CMake build only if you decide to opt-in for the New Architecture.
