@@ -29,11 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0091330710737455BCB95862 /* Pods-PitayaCreate.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PitayaCreate.test.xcconfig"; path = "Target Support Files/Pods-PitayaCreate/Pods-PitayaCreate.test.xcconfig"; sourceTree = "<group>"; };
+		0091330710737455BCB95862 /* Pods-ProjectName.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName.test.xcconfig"; path = "Target Support Files/Pods-ProjectName/Pods-ProjectName.test.xcconfig"; sourceTree = "<group>"; };
 		00E356EE1AD99517003FC87E /* ProjectNameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectNameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ProjectNameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectNameTests.m; sourceTree = "<group>"; };
-		05E7B17CFA2E55C6476FDF18 /* Pods-PitayaCreate-PitayaCreateTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PitayaCreate-PitayaCreateTests.test.xcconfig"; path = "Target Support Files/Pods-PitayaCreate-PitayaCreateTests/Pods-PitayaCreate-PitayaCreateTests.test.xcconfig"; sourceTree = "<group>"; };
+		05E7B17CFA2E55C6476FDF18 /* Pods-ProjectName-ProjectNameTests.test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName-ProjectNameTests.test.xcconfig"; path = "Target Support Files/Pods-ProjectName-ProjectNameTests/Pods-ProjectName-ProjectNameTests.test.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ProjectName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ProjectName/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = ProjectName/AppDelegate.mm; sourceTree = "<group>"; };
@@ -44,13 +44,13 @@
 		3B4392A12AC88292D35C810B /* Pods-ProjectName.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName.debug.xcconfig"; path = "Target Support Files/Pods-ProjectName/Pods-ProjectName.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-ProjectName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName.release.xcconfig"; path = "Target Support Files/Pods-ProjectName/Pods-ProjectName.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-ProjectName-ProjectNameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName-ProjectNameTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjectName-ProjectNameTests/Pods-ProjectName-ProjectNameTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5B8178FB32857927266B887E /* Pods-PitayaCreate.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PitayaCreate.demo.xcconfig"; path = "Target Support Files/Pods-PitayaCreate/Pods-PitayaCreate.demo.xcconfig"; sourceTree = "<group>"; };
+		5B8178FB32857927266B887E /* Pods-ProjectName.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName.demo.xcconfig"; path = "Target Support Files/Pods-ProjectName/Pods-ProjectName.demo.xcconfig"; sourceTree = "<group>"; };
 		5C00467728E3E7FC00FC2F0E /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = ProjectName/BootSplash.storyboard; sourceTree = "<group>"; };
 		5C3351D4290B75920009DFFF /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-ProjectName.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectName.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ProjectName/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-ProjectName-ProjectNameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName-ProjectNameTests.release.xcconfig"; path = "Target Support Files/Pods-ProjectName-ProjectNameTests/Pods-ProjectName-ProjectNameTests.release.xcconfig"; sourceTree = "<group>"; };
-		E0E814F37E953B673824B858 /* Pods-PitayaCreate-PitayaCreateTests.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PitayaCreate-PitayaCreateTests.demo.xcconfig"; path = "Target Support Files/Pods-PitayaCreate-PitayaCreateTests/Pods-PitayaCreate-PitayaCreateTests.demo.xcconfig"; sourceTree = "<group>"; };
+		E0E814F37E953B673824B858 /* Pods-ProjectName-ProjectNameTests.demo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName-ProjectNameTests.demo.xcconfig"; path = "Target Support Files/Pods-ProjectName-ProjectNameTests/Pods-ProjectName-ProjectNameTests.demo.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -154,10 +154,10 @@
 				5709B34CF0A7D63546082F79 /* Pods-ProjectName.release.xcconfig */,
 				5B7EB9410499542E8C5724F5 /* Pods-ProjectName-ProjectNameTests.debug.xcconfig */,
 				89C6BE57DB24E9ADA2F236DE /* Pods-ProjectName-ProjectNameTests.release.xcconfig */,
-				5B8178FB32857927266B887E /* Pods-PitayaCreate.demo.xcconfig */,
-				0091330710737455BCB95862 /* Pods-PitayaCreate.test.xcconfig */,
-				E0E814F37E953B673824B858 /* Pods-PitayaCreate-PitayaCreateTests.demo.xcconfig */,
-				05E7B17CFA2E55C6476FDF18 /* Pods-PitayaCreate-PitayaCreateTests.test.xcconfig */,
+				5B8178FB32857927266B887E /* Pods-ProjectName.demo.xcconfig */,
+				0091330710737455BCB95862 /* Pods-ProjectName.test.xcconfig */,
+				E0E814F37E953B673824B858 /* Pods-ProjectName-ProjectNameTests.demo.xcconfig */,
+				05E7B17CFA2E55C6476FDF18 /* Pods-ProjectName-ProjectNameTests.test.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
