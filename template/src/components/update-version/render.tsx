@@ -1,4 +1,5 @@
 import { Overlay } from '@fruits-chain/react-native-xiaoshu'
+import throttle from 'lodash/throttle'
 import React, { useEffect, useState, useCallback, memo } from 'react'
 import {
   View,
@@ -69,11 +70,11 @@ const UpdateVersionRenderer: React.FC<IProps> = ({ version, appleId }) => {
 
   useEffect(() => {
     const remove = UpdateVersion.listen(
-      payload => {
+      throttle(payload => {
         setTitle('升级中...')
         setBtnText(`${payload.percent}%...`)
-      },
-      info => {
+      }, 100),
+      () => {
         setLoading(false)
         setTitle('下载失败')
         setBtnText('重新下载')
