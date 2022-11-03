@@ -91,9 +91,9 @@ console.log(RNConfig.HOST)
 
 ### 文档/Mock
 
-修改 `graphql-kit.config.js` 文件内接口地址，运行 `yarn mock` 命令启动文档/Mock.
+修改 `qiufen.config.js` 文件内接口地址，运行 `yarn mock` 命令启动文档/Mock.
 
-更多说明请参考[文档](https://www.npmjs.com/package/@fruits-chain/graphql-kit-cli)
+更多说明请参考[文档](https://github.com/hjfruit/qiufen)
 
 ## 🔄 应用升级提醒
 
