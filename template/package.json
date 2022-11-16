@@ -52,7 +52,7 @@
     "lodash": "^4.17.21",
     "rc-field-form": "^1.27.2",
     "react": "18.1.0",
-    "react-native": "0.70.5",
+    "react-native": "0.70.6",
     "react-native-bootsplash": "4.3.2",
     "react-native-config": "1.4.11",
     "react-native-exception-handler": "^2.10.10",
