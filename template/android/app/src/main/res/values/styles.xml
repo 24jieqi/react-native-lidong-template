@@ -5,8 +5,8 @@
         <!-- Customize your theme here. -->
         <item name="android:textColor">@color/text_color</item>
         <item name="colorControlActivated">@color/primary</item>
-        <item name="android:statusBarColor">@android:color/white</item>
-        <item name="android:navigationBarColor">@android:color/white</item>
+        <!-- <item name="android:statusBarColor">@android:color/white</item> -->
+        <!-- <item name="android:navigationBarColor">@android:color/white</item> -->
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
     </style>
 
