@@ -10,8 +10,11 @@
 ## ⭐ 特点
 
 - 可以使用 [React Native CLI](https://github.com/react-native-community/cli) 直接创建
-
-- 集成最基础的配置、插件
+- 集成 ESLint、Prettier、启动页 [react-native-bootsplash](https://www.npmjs.com/package/react-native-bootsplash)、多环境变量 [react-native-config](https://www.npmjs.com/package/react-native-config)
+- 预置应用升级 [rn-update-version](https://www.npmjs.com/package/rn-update-version)
+- 预置白屏错误拦截 [react-native-exception-handler](https://www.npmjs.com/package/react-native-exception-handler)，可上报错误
+- 预置小暑 UI 组件库 [@fruits-chain/react-native-xiaoshu
+](https://www.npmjs.com/package/@fruits-chain/react-native-xiaoshu)
 
 ## ▶️ 使用方式
 
@@ -38,11 +41,13 @@ cd MyApp && yarn
 
 ### 更新启动页
 
-- 替换 `assets/bootsplash_logo_original.png` 图片
+- 替换 `assets/bootsplash_logo_original.png` 图片，建议使用 `--logo-width` 的 4 倍图
 - 根据自定义需求修改 `bootsplash:gen` 命令的参数
-- 运行 `yarn bootsplash:gen`
+- 运行 `yarn bootsplash:gen`，assets 文件夹内新增的图片可以删除
 
-更多说明请参考[文档](https://github.com/zoontek/react-native-bootsplash)
+原生端代码、改动已准备，不同项目只需要替换图片就好。
+
+更多启动页说明请参考[文档](https://github.com/zoontek/react-native-bootsplash)
 
 ## 📱 多环境
 
@@ -60,6 +65,10 @@ console.log(RNConfig.HOST)
 ```
 
 `typescript` 变量字段提示在 `src/typings/react-native-config.d.ts` 文件内维护。
+### 切换不同环境
+
+- Android 端采用设置环境变量的方式，例如 `cross-env ENVFILE=.test.dev react-native xxx xxx`
+- iOS 在 `Xcode` 内切换 `scheme`
 
 ### 打包
 
@@ -77,7 +86,7 @@ console.log(RNConfig.HOST)
 
 构建正式安装包使用 `Xcode`，选择对应的 `scheme` 构建，配置参考 `ios/MyApp.xcodeproj/xcshareddata/xcschemes`。
 
-更多说明请参考[文档](https://github.com/luggit/react-native-config)
+更多多环境说明请参考[文档](https://github.com/luggit/react-native-config)
 
 ## 📡 GraphQL
 
