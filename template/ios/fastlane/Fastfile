@@ -26,7 +26,7 @@ platform :ios do
       type: "adhoc",
     )
     build_ios_app(
-      scheme: "BuildTest",
+      scheme: "ProjectNameTest",
       clean: true,
     )
   
@@ -39,7 +39,7 @@ platform :ios do
       type: "adhoc",
     )
     build_ios_app(
-      scheme: "BuildDemo",
+      scheme: "ProjectNameDemo",
       clean: true,
     )
   
@@ -54,7 +54,7 @@ platform :ios do
       readonly: is_ci
     )
     build_ios_app(
-      scheme: "BuildProduction",
+      scheme: "ProjectNameProduction",
       clean: true,
     )
     upload_to_app_store(
