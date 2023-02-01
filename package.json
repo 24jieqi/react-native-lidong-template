@@ -4,7 +4,7 @@
   "description": "👾「立冬」React Native 初始化项目模板",
   "repository": "https://github.com/hjfruit/react-native-lidong-template.git",
   "author": "LING_ZI_QING <onlylingstudio@gmail.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
     "commit": "npx git-cz",
     "release:major": "npx release-it major",
