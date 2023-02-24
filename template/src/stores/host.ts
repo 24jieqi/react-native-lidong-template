@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import RNConfig from 'react-native-config'
 import type { StateCreator } from 'zustand'
-import create from 'zustand'
+import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
 
 interface HostState {
