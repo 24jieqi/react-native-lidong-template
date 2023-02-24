@@ -3,6 +3,26 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <queries>
+        <intent>
+            <!--响应所有的 https 协议的 Intent-->
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+
+        <intent>
+            <!--响应所有的 http 协议的 Intent-->
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="http" />
+        </intent>
+
+        <intent>
+            <!--打开邮箱发送邮件-->
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="mailto" />
+        </intent>
+    </queries>
+
     <application
       android:networkSecurityConfig="@xml/network_security_config"
       android:extractNativeLibs="true"
