@@ -139,8 +139,6 @@ def getPackage() {
 }
 
 def packageJSON = getPackage()
-def appVersion = packageJSON["version"]
-def appVersionCode = packageJSON["versionCode"]
 def appName = packageJSON["name"]
 
 android {
@@ -152,8 +150,8 @@ android {
         applicationId "com.projectname"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode appVersionCode
-        versionName appVersion
+        versionCode 1
+        versionName "0.0.1"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
         resValue "string", "build_config_package", "com.projectname" // react-native-config
 
@@ -255,7 +253,7 @@ android {
                 variant.outputs.all {
                     def outputFileSuffix = variant.flavorName == 'production' ? '' : ".${variant.flavorName}"
                     if (variant.buildType.name == 'release') {
-                        outputFileName = "${appName}${outputFileSuffix}-v${appVersion}.apk" 
+                        outputFileName = "${appName}${outputFileSuffix}-v${defaultConfig.versionName}.apk" 
                     }
                 }
             }
