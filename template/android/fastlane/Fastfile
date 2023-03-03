@@ -17,8 +17,12 @@ default_platform(:android)
 
 platform :android do
   skip_docs
+
+  private_lane :pgy do
+    pgyer(api_key: "TODO")
+  end
   
-  desc "测试版本 打包上传蒲公英"
+  desc "TEST版本 打包上传蒲公英"
   lane :test do
     gradle(task:'clean')
     gradle(
@@ -29,7 +33,7 @@ platform :android do
         "ENVFILE": ".env.test"
       },
     )
-    pgyer(api_key: "", user_key: "")
+    pgy
   end
 
   desc "DEMO版本 打包上传蒲公英"
@@ -43,7 +47,7 @@ platform :android do
         "ENVFILE": ".env.demo"
       },
     )
-    pgyer(api_key: "", user_key: "")
+    pgy
   end
 
   desc "正式版本 打包上传蒲公英"
@@ -57,16 +61,31 @@ platform :android do
         "ENVFILE": ".env.production"
       },
     )
-    pgyer(api_key: "", user_key: "")
+    pgy
+  end
+
+  desc "版本号和编译号修改"
+  lane :ver do |options|
+    android_set_version_name(
+      version_name: options[:ver],
+    )
+    android_set_version_code(
+      version_code: options[:num], 
+    )
+    # git_commit(path: ["./app/build.gradle"], message: "fix: version & number upload done")
+    # push_to_git_remote
   end
 
   after_all do |lane|
-    fastlane_directory = Dir.pwd
-    apk_file_path = lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
-    apk_path = fastlane_directory + "/outputs/pitaya-app.apk"
-    sh("mkdir", "-p", fastlane_directory +"/outputs")
-    sh("cp", "-p", "-f", apk_file_path, apk_path)
-
-    puts("apk保存路径： " + apk_path)
+    if lane == :ver
+      puts("version_name、version_code 修改完毕")
+    else
+      fastlane_directory = Dir.pwd
+      apk_file_path = lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]
+      apk_path = fastlane_directory + "/outputs/com.projectname.apk"
+      sh("mkdir", "-p", fastlane_directory +"/outputs")
+      sh("cp", "-p", "-f", apk_file_path, apk_path)
+      puts("apk保存路径： " + apk_path)
+    end
   end
 end

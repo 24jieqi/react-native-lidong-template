@@ -1,8 +1,4 @@
-# app_identifier "org.reactjs.native.sorting" # The bundle identifier of your app
-# apple_id "myt19960503@outlook.com"  # Your Apple email address
-
-
-# # For more information about the Appfile, see:
-# #     https://docs.fastlane.tools/advanced/#appfile
-app_identifier "org.reactjs.native.sorting" 
-apple_id "myt19960503@outlook.com" 
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
+app_identifier "org.reactjs.native.example.projectname" 
+apple_id "TODO"
