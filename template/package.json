@@ -19,7 +19,7 @@
     "lint:gql:generated": "eslint src/graphql/operations --ext .ts --fix",
     "prettier": "prettier --write 'src/**/*.{js,json,yml,yaml,ts,tsx,md}'",
     "prettier:gql:generated": "prettier --write 'src/graphql/operations/**/*.generated.{js,json,yml,yaml,ts,tsx,md}'",
-    "ncu": "npx npm-check-updates -u -x react,react-native,@types/react-native,jcore-react-native,jpush-react-native,axios,react-native-bootsplash",
+    "ncu": "npx npm-check-updates -u -x react,react-native,@types/react-native,jcore-react-native,jpush-react-native,axios,metro-react-native-babel-preset",
     "commit": "npx git-cz",
     "prepare": "husky install",
     "lint-staged": "lint-staged --allow-empty",
@@ -69,15 +69,17 @@
     "zustand": "4.3.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "@babel/runtime": "^7.20.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/runtime": "^7.21.0",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
-    "@fruits-chain/eslint-config-rn": "^0.2.14",
+    "@fruits-chain/eslint-config-rn": "^0.2.15",
     "@fruits-chain/graphql-codegen-preset": "^0.1.2",
     "@fruits-chain/prettier-config-preset": "^0.0.3",
     "@fruits-chain/qiufen-helpers": "^1.0.1",
     "@types/lodash": "^4.14.191",
+    "@types/react": "^18.0.28",
     "babel-plugin-import": "^1.13.6",
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
@@ -86,7 +88,7 @@
     "lint-staged": "^13.1.2",
     "metro-react-native-babel-preset": "0.73.7",
     "mockjs": "^1.1.0",
-    "typescript": "4.8.4"
+    "typescript": "4.9.5"
   },
   "resolutions": {
     "@types/react": "^18",
