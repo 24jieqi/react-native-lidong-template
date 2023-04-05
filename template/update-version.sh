@@ -15,5 +15,5 @@ INFOPLIST_DIR="${PROJECT_IOS_DIR}/${INFOPLIST_FILE}"
 ## Android
 BUILD_GRADLE="android/app/build.gradle"
 
-sed -i '' "s/versionName \"[0-9.]*\"/versionName \"${PACKAGE_VERSION}\"/g" "${BUILD_GRADLE}"
-sed -i '' "s/versionCode [0-9]*/versionCode ${PACKAGE_VERSION_CODE}/g" "${BUILD_GRADLE}"
+sed -i '' "s/versionName \"[0-9.a-zA-Z]*\"$/versionName \"${PACKAGE_VERSION}\"/g" "${BUILD_GRADLE}"
+sed -i '' "s/versionCode [0-9]*$/versionCode ${PACKAGE_VERSION_CODE}/g" "${BUILD_GRADLE}"
