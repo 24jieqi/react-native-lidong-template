@@ -7,10 +7,8 @@ import {
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { onError } from '@apollo/client/link/error'
-import { removeMockDirectivesFromDocument } from '@fruits-chain/qiufen-helpers'
 import { Dialog, Toast } from '@fruits-chain/react-native-xiaoshu'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { parse } from 'graphql'
 import debounce from 'lodash/debounce'
 import { Platform } from 'react-native'
 import VersionNumber from 'react-native-version-number'
@@ -20,8 +18,6 @@ import config from '@/config'
 import { navigate } from '@/router/root-navigation'
 import useHostStore from '@/stores/host'
 import { omitDeepLodash } from '@/utils/deep-omit'
-
-import { port } from '../../qiufen.config'
 
 const platform = Platform.OS
 
@@ -70,10 +66,6 @@ const authMiddleware = new ApolloLink((operation, forward) => {
   })
   // 过滤掉数据中的__typename
   operation.variables = omitDeepLodash(operation?.variables, ['__typename'])
-  // 过滤掉mock指令
-  if (uri !== `http://localhost:${port}/graphql`) {
-    operation.query = parse(removeMockDirectivesFromDocument(operation.query))
-  }
 
   return forward(operation)
 })

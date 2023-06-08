@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const Mock = require('mockjs')
+// const Mock = require('mockjs')
 
-const { Random } = Mock
+// const { Random } = Mock
 
 module.exports = {
   port: 9400,
@@ -18,26 +18,26 @@ module.exports = {
     },
   },
   mock: {
-    enable: true,
-    mockDirectiveDefaultEnableValue: true,
-    context: {
-      Random,
-    },
-    scalarMap: {
-      Int: () => Random.integer(0, 100),
-      String: () => Random.ctitle(2, 4),
-      ID: () => Random.id(),
-      Boolean: () => Random.boolean(),
-      BigDecimal: () => Random.integer(0, 1000000),
-      Float: () => Random.float(0, 100),
-      Date: () => Random.date(),
-      DateTime: () => Random.datetime(),
-      Long: () => Random.integer(0, 10000),
-      NumberOrBoolOrStringOrNull: () => null,
-      NumberOrString: () => null,
-    },
-    resolvers: {
-      Query: {},
-    },
+    enable: false,
+    // mockDirectiveDefaultEnableValue: true,
+    // context: {
+    //   Random,
+    // },
+    // scalarMap: {
+    //   Int: () => Random.integer(0, 100),
+    //   String: () => Random.ctitle(2, 4),
+    //   ID: () => Random.id(),
+    //   Boolean: () => Random.boolean(),
+    //   BigDecimal: () => Random.integer(0, 1000000),
+    //   Float: () => Random.float(0, 100),
+    //   Date: () => Random.date(),
+    //   DateTime: () => Random.datetime(),
+    //   Long: () => Random.integer(0, 10000),
+    //   NumberOrBoolOrStringOrNull: () => null,
+    //   NumberOrString: () => null,
+    // },
+    // resolvers: {
+    //   Query: {},
+    // },
   },
 }
