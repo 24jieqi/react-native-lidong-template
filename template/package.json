@@ -43,7 +43,6 @@
     "@fruits-chain/react-native-xiaoshu": "^0.3.12",
     "@react-native-async-storage/async-storage": "1.18.2",
     "@react-navigation/bottom-tabs": "6.5.8",
-    "@react-navigation/material-top-tabs": "6.6.3",
     "@react-navigation/native": "6.1.7",
     "@react-navigation/stack": "6.3.17",
     "ahooks": "^3.7.7",
