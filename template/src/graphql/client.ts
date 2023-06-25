@@ -48,7 +48,7 @@ const withToken = setContext(async () => {
 
 // 请求处理
 const authMiddleware = new ApolloLink((operation, forward) => {
-  const { token, uri } = operation.getContext()
+  const { token } = operation.getContext()
   operation.setContext(({ headers = {} }) => {
     if (token) {
       Object.assign(headers, { Authorization: token })
