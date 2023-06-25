@@ -7,17 +7,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  self.moduleName = @"ProjectName";
+  self.moduleName = @"HelloWorld";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
 
-  // return [super application:application didFinishLaunchingWithOptions:launchOptions];
-
-  // react-native-bootsplash
-  [super application:application didFinishLaunchingWithOptions:launchOptions];
-  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:self.window.rootViewController.view];
-  return YES;
+  return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
@@ -27,6 +22,19 @@
 #else
   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
+}
+
+// react-native-bootsplash
+- (UIView *)createRootViewWithBridge:(RCTBridge *)bridge
+                          moduleName:(NSString *)moduleName
+                           initProps:(NSDictionary *)initProps {
+  UIView *rootView = [super createRootViewWithBridge:bridge
+                                          moduleName:moduleName
+                                           initProps:initProps];
+
+  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView]; // ⬅️ initialize the splash screen
+
+  return rootView;
 }
 
 @end
