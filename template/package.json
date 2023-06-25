@@ -78,7 +78,6 @@
     "@fruits-chain/graphql-codegen-preset": "^0.3.1",
     "@fruits-chain/prettier-config-preset": "^0.0.3",
     "@types/lodash": "^4.14.191",
-    "@types/metro-config": "^0.76.3",
     "@types/react": "^18.2.14",
     "babel-plugin-import": "^1.13.6",
     "babel-plugin-module-resolver": "^5.0.0",
