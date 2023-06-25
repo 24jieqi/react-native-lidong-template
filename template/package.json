@@ -76,6 +76,7 @@
     "@fruits-chain/eslint-config-rn": "^0.2.23",
     "@fruits-chain/graphql-codegen-preset": "^0.3.1",
     "@fruits-chain/prettier-config-preset": "^0.0.3",
+    "@react-native/metro-config": "^0.72.6",
     "@types/lodash": "^4.14.191",
     "@types/react": "^18.2.14",
     "babel-plugin-import": "^1.13.6",
