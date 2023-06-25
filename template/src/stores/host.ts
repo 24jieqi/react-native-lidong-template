@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import RNConfig from 'react-native-config'
 import type { StateCreator } from 'zustand'
 import { create } from 'zustand'
-import { devtools, persist } from 'zustand/middleware'
+import { devtools, persist, createJSONStorage } from 'zustand/middleware'
 
 interface HostState {
   host: string
@@ -33,7 +33,8 @@ const hostGlobalStore = create(
     RNConfig.CUSTOMIZE_HOST
       ? (persist<HostState>(baseStateCreator, {
           name,
-          getStorage: () => AsyncStorage,
+          // getStorage: () => AsyncStorage,
+          storage: createJSONStorage(() => AsyncStorage),
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         }) as any)
       : baseStateCreator,
