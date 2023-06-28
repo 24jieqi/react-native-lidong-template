@@ -29,17 +29,17 @@ npx react-native init MyApp --template @fruits-chain/react-native-lidong-templat
 cd MyApp && yarn
 ```
 
-### 更新应用名称
+### 设置应用名称
 
 - 修改 `app.json` 内 `displayName` 字段
 - 修改 `android/app/build.gradle` 内 `productFlavors` 相关 `resValue "string", "app_name"` 对应字符串
 - 修改 `ios/MyApp/Info.plist` 内 `$(BUNDLE_DISPLAY_NAME_PREFIX)` 字符串后面的字符串
 
-### 更新使用图标
+### 设置使用图标
 
 使用 https://icon.wuruihong.com/ 生成 Android、iOS 各种尺寸的图标。
 
-### 更新启动页
+### 设置启动页
 
 - 替换 `assets/bootsplash_logo_original.png` 图片，建议使用 `--logo-width` 的 4 倍图
 - 根据自定义需求修改 `bootsplash:gen` 命令的参数
@@ -49,7 +49,7 @@ cd MyApp && yarn
 
 更多启动页说明请参考[文档](https://github.com/zoontek/react-native-bootsplash)
 
-## 📱 多环境
+## 📱 多环境/环境变量
 
 - .env.dev 开发
 - .env.test 测试
@@ -68,21 +68,23 @@ console.log(RNConfig.HOST)
 ### 切换不同环境
 
 - Android 端采用设置环境变量的方式，例如 `cross-env ENVFILE=.test.dev react-native xxx xxx`
-- iOS 在 `Xcode` 内切换 `scheme`
+- iOS 在 `Xcode` 内切换 `scheme`，例如 `react-native run-ios --scheme 'MyAppTest'`
 
-### 打包
+### 更新版本号、构建号
 
-修改 `package.json` 的 `version`、`versionCode`，运行 `./version-ios.sh` 脚本。
+修改 `package.json` 的 `version`、`versionCode`，运行 `./update-version.sh` 脚本。
 
-`Android` 构建的时候会读取 `package.json`，`iOS` 需要手动修改 `Info.plist` 文件配置。
+`android/app/build.gradle`、`ios/MyApp/Info.plist` 文件对应的版本号、构建号同步更新。
 
-#### Android
+~~`Android` 构建的时候会读取 `package.json`，`iOS` 需要手动修改 `Info.plist` 文件配置。~~
+
+#### Android 打包
 
 构建正式安装包参考 `package.json` 中 `android:**` 相关命令，同时为了在一个机器上共存多个环境的应用，又采用了多渠道打包。
 
 多渠道配置参考 `android/app/build.gradle` 文件，关键词 `productFlavors`。
 
-#### iOS
+#### iOS 打包
 
 构建正式安装包使用 `Xcode`，选择对应的 `scheme` 构建，配置参考 `ios/MyApp.xcodeproj/xcshareddata/xcschemes`。
 
@@ -100,9 +102,9 @@ console.log(RNConfig.HOST)
 
 ### 文档/Mock
 
-修改 `qiufen.config.js` 文件内接口地址，运行 `yarn mock` 命令启动文档/Mock.
+推荐使用 `Graphql Qiufen Pro` vscode 插件。
 
-更多说明请参考[文档](https://github.com/hjfruit/qiufen)
+更多说明请参考[文档](https://marketplace.visualstudio.com/items?itemName=never-w.graphql-qiufen-pro)
 
 ## 🔄 应用升级提醒
 
