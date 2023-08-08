@@ -78,6 +78,8 @@ console.log(RNConfig.HOST)
 
 ~~`Android` 构建的时候会读取 `package.json`，`iOS` 需要手动修改 `Info.plist` 文件配置。~~
 
+> 注意：`build.gradle` 文件换行符需要使用 `LF`。
+
 #### Android 打包
 
 构建正式安装包参考 `package.json` 中 `android:**` 相关命令，同时为了在一个机器上共存多个环境的应用，又采用了多渠道打包。
