@@ -40,7 +40,7 @@
     "@apollo/client": "^3.7.17",
     "@fruits-chain/design-tokens-bailu": "^0.0.7",
     "@fruits-chain/icons-react-native": "^0.1.5",
-    "@fruits-chain/react-native-xiaoshu": "^0.3.18",
+    "@fruits-chain/react-native-xiaoshu": "^0.3.19",
     "@react-native-async-storage/async-storage": "1.19.0",
     "@react-navigation/bottom-tabs": "6.5.8",
     "@react-navigation/native": "6.1.7",
