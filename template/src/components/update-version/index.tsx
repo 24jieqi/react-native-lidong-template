@@ -2,10 +2,25 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { DeviceEventEmitter } from 'react-native'
 
 import config from '@/config'
-import { getAppVersion } from '@/middle-services/api-restful'
-import type { AppVersion } from '@/middle-services/api-restful'
 
+import type { AppVersion } from './interface'
 import UpdateVersionRenderer from './render'
+
+const getAppVersion = async () => {
+  const data: AppVersion = {
+    appleId: '',
+    downloadUrl: '',
+    platform: 0,
+    updateInfo: '',
+    upgradeStrategy: 0,
+    version: 0,
+    versionCode: '',
+  }
+
+  return {
+    data,
+  }
+}
 
 // 区分客户端版本
 const { appleId } = config

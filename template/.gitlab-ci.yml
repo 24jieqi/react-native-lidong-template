@@ -1,4 +1,0 @@
-include:
-  - project: "devops/runner-ci"
-    ref: "main"
-    file: "template/app-npm-auto-deploy.yml"

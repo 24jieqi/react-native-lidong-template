@@ -13,9 +13,8 @@ import {
 import VersionNumber from 'react-native-version-number'
 import UpdateVersion from 'rn-update-version'
 
-import type { AppVersion } from '@/middle-services/api-restful'
-
 import Imgs from './images'
+import type { AppVersion } from './interface'
 
 interface IProps {
   version: AppVersion

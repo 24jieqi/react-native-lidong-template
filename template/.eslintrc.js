@@ -18,8 +18,5 @@ module.exports = {
   },
   globals: {
     NodeJS: true,
-    defs: true,
-    // API: true,
-    // window: true,
   },
 }

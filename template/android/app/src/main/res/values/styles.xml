@@ -3,18 +3,15 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:textColor">@color/text_color</item>
-        <item name="colorControlActivated">@color/primary</item>
-        <!-- <item name="android:statusBarColor">@android:color/white</item> -->
-        <!-- <item name="android:navigationBarColor">@android:color/white</item> -->
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
     </style>
 
-    <!-- BootTheme should inherit from Theme.SplashScreen -->
-    <style name="BootTheme" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/bootsplash_background</item>
-        <item name="windowSplashScreenAnimatedIcon">@mipmap/bootsplash_logo</item>
-        <item name="postSplashScreenTheme">@style/AppTheme</item>
+    <!-- BootTheme should inherit from Theme.BootSplash or Theme.BootSplash.EdgeToEdge -->
+    <style name="BootTheme" parent="Theme.BootSplash">
+        <item name="bootSplashBackground">@color/bootsplash_background</item>
+        <item name="bootSplashLogo">@drawable/bootsplash_logo</item>
+        <item name="bootSplashBrand">@drawable/bootsplash_brand</item> <!-- Only if you have a brand image -->
+        <item name="postBootSplashTheme">@style/AppTheme</item>
     </style>
 
 </resources>

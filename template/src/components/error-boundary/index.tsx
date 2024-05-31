@@ -1,17 +1,16 @@
 import { Button } from '@fruits-chain/react-native-xiaoshu'
 import React, { Component, useEffect } from 'react'
-import { Alert, StatusBar, Platform, Text, View, Image } from 'react-native'
+import {
+  Alert,
+  StatusBar,
+  Platform,
+  Text,
+  View,
+  Image,
+  StyleSheet,
+} from 'react-native'
 import ReactNativeExceptionHandler from 'react-native-exception-handler'
 import VersionNumber from 'react-native-version-number'
-
-import graphqlClient from '@/graphql/client'
-import type {
-  InsertAppExceptionMutation,
-  InsertAppExceptionMutationVariables,
-} from '@/graphql/operations/__generated__/common.generated'
-import { InsertAppExceptionDocument } from '@/graphql/operations/__generated__/common.generated'
-import EStyleSheet from '@/lib/react-native-extended-stylesheet'
-import useUser from '@/stores/user'
 
 import IMAGE_ERROR from './images/default_error.png'
 
@@ -55,29 +54,10 @@ const DefaultStatusBar = () => {
  */
 const reporter = (error: Error, isNative: boolean, info?: string) => {
   if (!__DEV__) {
-    graphqlClient.mutate<
-      InsertAppExceptionMutation,
-      InsertAppExceptionMutationVariables
-    >({
-      mutation: InsertAppExceptionDocument,
-      variables: {
-        appExceptionDTO: {
-          appId: 2,
-          platform: Platform.OS,
-          version: VersionNumber.buildVersion,
-          systemVersion: `${Platform.Version}`,
-          exceptionType: isNative ? 1 : 2,
-          message: JSON.stringify({
-            isNative,
-            name: error.name,
-            message: error.message,
-            more: info || '',
-            phoneNum: useUser.getState().userInfo?.phoneNum,
-            router: errorRouterInfo,
-          }),
-        },
-      },
-    })
+    // TODO 上报错误信息
+    console.log('App 客户端版本 => ', VersionNumber.buildVersion)
+    console.log('App bundle 版本 => ', `TODO GET`)
+    console.log('发生错误时的路由是 => ', errorRouterInfo)
 
     // 上报后清空路由信息
     errorRouterInfo = {}
@@ -164,7 +144,7 @@ export class ErrorBoundary extends Component<React.PropsWithChildren<{}>> {
   }
 }
 
-const STYLES = EStyleSheet.create({
+const STYLES = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: '#fff',
@@ -175,14 +155,14 @@ const STYLES = EStyleSheet.create({
   text: {
     color: '$gray_6',
     lineHeight: 22,
-    fontSize: '$font_size_2',
-    paddingVertical: '$space_2',
-    marginHorizontal: '$space_4',
+    fontSize: 12,
+    paddingVertical: 8,
+    marginHorizontal: 16,
     textAlign: 'center',
   },
 
   btn: {
-    paddingHorizontal: '$space_6',
-    marginTop: '$space_4',
+    paddingHorizontal: 24,
+    marginTop: 16,
   },
 })

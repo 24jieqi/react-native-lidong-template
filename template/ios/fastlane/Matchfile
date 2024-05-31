@@ -1,5 +1,0 @@
-git_url("https://git.hjgpscm.com/ops/certificate-app.git")
-
-storage_mode("git")
-
-type("adhoc") # The default type, can be: appstore, adhoc, enterprise or development
