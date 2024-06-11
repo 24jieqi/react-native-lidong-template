@@ -10,7 +10,7 @@
     <style name="BootTheme" parent="Theme.BootSplash">
         <item name="bootSplashBackground">@color/bootsplash_background</item>
         <item name="bootSplashLogo">@drawable/bootsplash_logo</item>
-        <item name="bootSplashBrand">@drawable/bootsplash_brand</item> <!-- Only if you have a brand image -->
+        <!-- <item name="bootSplashBrand">@drawable/bootsplash_brand</item> Only if you have a brand image -->
         <item name="postBootSplashTheme">@style/AppTheme</item>
     </style>
 

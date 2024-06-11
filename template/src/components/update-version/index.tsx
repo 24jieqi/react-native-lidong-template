@@ -29,6 +29,9 @@ const UpdateVersionEventEmitter = DeviceEventEmitter
 
 const UPDATE_VERSION_REFETCH_EVENT_NAME = '__refetch__'
 
+/**
+ * 在网络中遇见提醒升级就触发该函数
+ */
 export const emitRefetchUpdateVersion = () => {
   UpdateVersionEventEmitter.emit(UPDATE_VERSION_REFETCH_EVENT_NAME)
 }
@@ -48,7 +51,7 @@ const UpdateVersion: React.FC = () => {
 
     refetch()
 
-    // refetch
+    // 兼容使用过程中升级提醒
     const listener = UpdateVersionEventEmitter.addListener(
       UPDATE_VERSION_REFETCH_EVENT_NAME,
       () => {

@@ -1,6 +1,8 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
+    "types": ["react-native"],
+    "module": "ESNext",
     /* Completeness */
     "baseUrl": "src" /* Base directory to resolve non-absolute module names. */,
     "paths": {
