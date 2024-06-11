@@ -49,7 +49,7 @@ cd MyApp && yarn
 
 在路由初始化好的时候关闭启动页，代码见 `src/router/index.tsx#L25`。
 
-更多启动页说明请参考[react-native-bootsplash 文档](https://github.com/zoontek/react-native-bootsplash)
+更多启动页说明请参考 [react-native-bootsplash 文档](https://github.com/zoontek/react-native-bootsplash)
 
 ## 📱 多环境、环境变量
 
@@ -73,7 +73,7 @@ console.log(RNConfig.HOST)
 - Android 项目在 `android/app/build.gradle#L2` 配置了不同渠道对应的环境变量，运行 `react-native run-android --mode 'devDebug' --appIdSuffix 'dev'`
 - iOS 项目在 `Xcode` 内切换 `scheme`，例如 `react-native run-ios --scheme 'MyAppTest'`
 
-更多多环境说明请参考[react-native-config 文档](https://github.com/luggit/react-native-config)
+更多多环境说明请参考 [react-native-config 文档](https://github.com/luggit/react-native-config)
 
 ## 🔄 应用升级提醒
 
